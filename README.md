@@ -22,3 +22,5 @@ KoBERT 기반 개체명 인식 기술을 활용한 119 신고 접수 도움 서�
 
 ### Training 및 Validation
 Hyper parameters를 다음과 같이 설정하여 Training 진행
+
+# 내용 추가 예정
