@@ -65,7 +65,7 @@ _세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다
   
 **3. Modeling**
 + 사전학습된 KoBERT 모델에 Token Classification Layer를 쌓은 형태로 모델링을 진행합니다.
-  + Huggingface의 transformer 라이브러리에서 BertForTokenClassification 클래스를 활용했습니다.
+  + Huggingface의 transformers 라이브러리에서 BertForTokenClassification 클래스를 활용했습니다.
 
 **4. Training**
 + Optimizer와 Hyper parameters를 다음과 같이 설정한 뒤 학습을 진행합니다.
