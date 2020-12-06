@@ -44,6 +44,7 @@ class MyWindow(QMainWindow, form_class):
 
     tag_dict_decode = inv_map = {v: k for k, v in tag_dict.items()}
     model = torch.load('KoBERTmodel_for_AI_201130.pt')
+    # CUDA 설치 등의 GPU 설정이 까다로운 상태라면 model = torch.load('KoBERTmodel_for_AI_201130.pt', map_location='cpu')로 변경하여 CPU로 실행하기
 
     # 디바이스 설정
     if torch.cuda.is_available():
