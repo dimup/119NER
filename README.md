@@ -2,7 +2,8 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/46772883/101279253-5c083b00-3804-11eb-9558-63f6623a19c8.png" /></p>
 
 **언어모델 기반 개체명 인식 기술을 활용한 119 신고 접수 도움 서비스.  
-신고자의 음성에서 (피해 장소, 피해 유형, 피해 인원) 등의 주요 개체들을 인식하여 빠르고 정확한 상황 요약을 제공합니다.**
+신고자의 음성에서 (피해 장소, 피해 유형, 피해 인원) 등의 주요 개체들을 인식하여  
+빠르고 정확한 상황 요약을 제공합니다.**
 
 
 ### **주요 파일 설명**
@@ -32,7 +33,7 @@
 + 한국해양대학교 개체명 코퍼스 : https://github.com/kmounlp/NER
 + Google BERT : https://github.com/google-research/bert
 + SK T-Brain KoBERT : https://github.com/SKTBrain/KoBERT
-
++ huggingface.co : https://huggingface.co/transformers/model_doc/bert.html
 
 ## 119NER 구현 과정
 
@@ -44,30 +45,38 @@
 2. 해당 오디오 파일을 ETRI의 음성인식 API 서버로 전달하여 인식 결과를 텍스트로 받습니다.
 
 ### KoBERT 기반 개체명 인식 모델 구현
-**세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다.**
-1. Data 수집 및 구축
+_세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다._
+**1. Data 수집 및 구축**
 + 한국해양대학교 개체명 코퍼스에서 input data와 target data 각각 약 21000 문장을 파싱한 뒤 Training, Validation 데이터로 분리합니다.
   + Training set : 약 17000 문장
   + Validation set : 약 4000 문장
 + 추가적으로 119 신고 도메인에 맞추기 위해 '피해 유형'을 나타내는 EMR 태그 생성했고, 이에 대한 문장 데이터를 각각 약 1000개씩 구축합니다
 
-2. Input data, Target data 전처리
+**2. Input data, Target data 전처리**
 + BERT 구조 형식에 맞게 데이터 전처리를 진행합니다. Input data와 Target data의 전처리는 차이가 있지만, 다음의 공통 과정을 거칩니다.
   + [CLS], [SEP] 토큰 부착
   + SentencePiece tokenizing
   + Embedding
   + Padding
   
-3. Modeling
-+ 
-<br>
-<br>
-### 모델링
-<p align="center"><img src="https://user-images.githubusercontent.com/46772883/101274746-eee4ad80-37e3-11eb-9601-45ceac5140ea.png"/>
-</p>  
-사전학습 된 KoBERT 모델에 Token 분류 레이어를 추가하는 형태로 구현. 
+**3. Modeling**
++ 사전학습된 KoBERT 모델에 Token Classification Layer를 쌓은 형태로 모델링을 진행합니다.
+  + Huggingface의 transformer 라이브러리에서 BertForTokenClassification 클래스를 활용했습니다.
 
-### Training 및 Validation
-Hyper parameters를 다음과 같이 설정하여 Training 진행
+**4. Training**
++ Optimizer와 Hyper parameters를 다음과 같이 설정한 뒤 학습을 진행합니다.
+  + Optimizer : AdamW optimizer
+  + Learning rate : 1e-5
+  + Epsilon : 1e-8
+  + Epochs : 50
+  + Batch size : 8
++ 학습을 마친 뒤 Validation을 수행합니다. 토큰 간 정확도(Accuracy)를 측정했습니다.
+  + 정확도 결과 : 약 92%
 
-# 내용 추가 예정
+**5. Testing**
++ 임의의 문장을 학습이 완료된 모델에 통과시켜 그 결과를 확인합니다.
+
+### 구현 모델의 인식 결과를 가공 및 정리하는 코드 구현
+**1. 인식 결과 가공**
++ 토큰 형태로 반환되는 결과를 다시 단어들로 결합합니다.
+  + SentencePiece tokenization의 구분자인 '
