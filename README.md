@@ -1,10 +1,12 @@
 # 119NER
+<p align="center"><img src="https://user-images.githubusercontent.com/46772883/101279253-5c083b00-3804-11eb-9558-63f6623a19c8.png" /></p>
+
 언어모델 기반 개체명 인식 기술을 활용한 119 신고 접수 도움 서비스
-<p align="center"><img src="https://user-images.githubusercontent.com/46772883/101274524-12a6f400-37e2-11eb-9b05-0ddce34585c2.png" /></p>
 
 
 # 119NER 모델 구현 과정
-<p align="center"><img src="https://user-images.githubusercontent.com/46772883/101279253-5c083b00-3804-11eb-9558-63f6623a19c8.png" /></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/46772883/101274524-12a6f400-37e2-11eb-9b05-0ddce34585c2.png" /></p>
 - SK T-brain에서 발표한 BERT 기반 한국어 언어모델 KoBERT를 활용했으며, 세부 내용은 KoBERT_NER_KMOU_for_119NER.ipynb 파일에서 확인할 수 있음 **
 <br>
 
