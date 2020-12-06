@@ -45,6 +45,8 @@
 
 ### KoBERT 기반 개체명 인식 모델 구현
 _세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다._  
+
+
 **1. Data 수집 및 구축**
 + 한국해양대학교 개체명 코퍼스에서 input data와 target data 각각 약 21000 문장을 파싱한 뒤 Training, Validation 데이터로 분리합니다.
   + Training set : 약 17000 문장
