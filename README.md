@@ -5,7 +5,8 @@ KoBERT 기반 개체명 인식 기술을 활용한 119 신고 접수 도움 서�
 
 # 119NER 모델 구현 과정
 - 세부 내용은 KoBERT_NER_KMOU_for_119NER.ipynb 파일에서 확인할 수 있음 **
----  
+
+
 ### 데이터셋
 한국해양대학교 개체명 코퍼스에서 input data와 target data 각각 약 21000 문장을 파싱.
 - Training set : 약 17000 문장
