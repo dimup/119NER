@@ -21,6 +21,7 @@
 ### **사용법**
 + **"KoBERT_NER_KMOU_for_119NER.ipynb"를 제외하고, 모두 같은 폴더에 설치한 뒤, "119ner.py"를 실행하면 됩니다.** 
   + "requirements.txt"를 통해 필요한 패키지 및 라이브러리를 설치를 한 번에 진행하면 더욱 수월합니다.
+  + 실행 환경에 따라 부가적인 GPU 설정이 필요할 수 있으므로, CPU로 실행하는 것도 가능하도록 설정해놓았습니다.
 + **실행을 위해서는 ETRI API 개인키를 신청하여 발급받아야 합니다. (개발자의 개인 키를 공유할 수 없습니다.)**
   + 발급 후  "119NER.py" 파일의 287 line에서 accessKey 변수에 키 값을 대입하면 됩니다.
 + **구현한 개체명 인식 모델은 용량 문제로 구글 드라이브에서 공유했습니다. 해당 url을 통해 "119ner.py"와 같은 폴더에 내려받으면 됩니다.**
@@ -33,6 +34,8 @@
 + Google BERT : https://github.com/google-research/bert
 + SK T-Brain KoBERT : https://github.com/SKTBrain/KoBERT
 + huggingface.co : https://huggingface.co/transformers/model_doc/bert.html
+
+<br>
 
 ## 119NER 구현 과정
 
