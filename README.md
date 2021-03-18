@@ -32,13 +32,6 @@
   + https://drive.google.com/file/d/16Vjpc1WlhL7jov-RvtvF95zWD4CWSb41/view?usp=sharing
 
 
-### **참고**
-+ ETRI 음성인식 open API : https://aiopen.etri.re.kr/guide_recognition.php
-+ 한국해양대학교 개체명 코퍼스 : https://github.com/kmounlp/NER
-+ Google BERT : https://github.com/google-research/bert
-+ SK T-Brain KoBERT : https://github.com/SKTBrain/KoBERT
-+ huggingface.co : https://huggingface.co/transformers/model_doc/bert.html
-
 <br>
 
 ## 119NER 구현 과정
@@ -94,3 +87,13 @@ _세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다
 + 통과한 결과를 기반으로 요약문을 생성합니다.
 
 #### 음성 입력부터 요약문 생성까지의 기능을 Python GUI 프로그램으로 사용할 수 있도록 구현했습니다.
+
+
+<br>
+
+### **참고**
++ ETRI 음성인식 open API : https://aiopen.etri.re.kr/guide_recognition.php
++ 한국해양대학교 개체명 코퍼스 : https://github.com/kmounlp/NER
++ Google BERT : https://github.com/google-research/bert
++ SK T-Brain KoBERT : https://github.com/SKTBrain/KoBERT
++ huggingface.co : https://huggingface.co/transformers/model_doc/bert.html
