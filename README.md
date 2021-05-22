@@ -71,7 +71,7 @@ _세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다
   + Epsilon : 1e-8
   + Epochs : 50
   + Batch size : 8
-+ 학습을 마친 뒤 Validation을 수행합니다. 토큰 간 정확도(Accuracy)를 측정했습니다.
++ 학습을 마친 뒤 Evaluation을 수행합니다. 토큰 간 정확도(Accuracy)를 측정했습니다.
   + 정확도 결과 : 약 92%
 
 **5. Testing**
