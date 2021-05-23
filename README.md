@@ -48,9 +48,9 @@ _세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다
 
 
 **1. Data 수집 및 구축**
-+ 한국해양대학교 개체명 코퍼스에서 input data와 target data 각각 약 21000 문장을 파싱한 뒤 Training, Validation 데이터로 분리합니다.
++ 한국해양대학교 개체명 코퍼스에서 input data와 target data 각각 약 21000 문장을 파싱한 뒤 Training, Test 데이터로 분리합니다.
   + Training set : 약 17000 문장
-  + Validation set : 약 4000 문장
+  + Test set : 약 4000 문장
 + 추가적으로 119 신고 도메인에 맞추기 위해 '피해 유형'을 나타내는 EMR 태그 생성했고, 이에 대한 문장 데이터를 각각 약 1000개씩 구축합니다
 
 **2. Input data, Target data 전처리**
@@ -71,7 +71,7 @@ _세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다
   + Epsilon : 1e-8
   + Epochs : 50
   + Batch size : 8
-+ 학습을 마친 뒤 Evaluation을 수행합니다. 토큰 간 정확도(Accuracy)를 측정했습니다.
++ 학습을 마친 뒤 Test set에 대한 Evaluation을 수행합니다. 토큰 간 정확도(Accuracy)를 측정했습니다.
   + 정확도 결과 : 약 92%
 
 **5. Testing**
