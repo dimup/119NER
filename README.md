@@ -71,6 +71,8 @@ _세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다
   + Epsilon : 1e-8
   + Epochs : 50
   + Batch size : 8
+
+**5. Evaluation**
 + 학습을 마친 뒤 Test set에 대한 Evaluation을 수행합니다. 토큰 간 정확도(Accuracy)를 측정했습니다.
   + 정확도 결과 : 92.38126530856084 %
 
@@ -80,7 +82,7 @@ _세부 과정은 "KoBERT_NER_KMOU_for_119NER.ipynb"에 작성되어있습니다
     + 정확도 결과 :  85.46427836112827 %
 
 
-**5. Testing**
+**6. Testing**
 + 임의의 문장을 학습이 완료된 모델에 통과시켜 그 결과를 확인합니다.
 
 ### 구현 모델의 인식 결과를 가공 및 정리하는 코드 구현
